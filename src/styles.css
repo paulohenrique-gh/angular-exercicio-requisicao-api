@@ -2,4 +2,12 @@
 body {
   background-color: #1f1f1f;
   color: #bbb;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

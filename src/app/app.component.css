@@ -1,12 +1,22 @@
 .trips {
+  list-style: none;
   display: flex;
   align-items: stretch;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 8px;
+  width: 1000px;
+  padding-left: 0;
+}
+
+.trips li {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
 }
 
 app-trip {
-  border: 2px solid wheat;
+  border: 2px solid #bbb;
   border-radius: 5px;
   width: fit-content;
   padding: 8px;

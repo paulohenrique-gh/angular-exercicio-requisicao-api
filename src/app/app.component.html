@@ -1,5 +1,7 @@
-<!-- <button (click)="loadTrips()">Carregar viagens</button> -->
+<h1>{{ title }}</h1>
 
-<div class="trips">
-  <app-trip *ngFor="let trip of trips" [trip]="trip"></app-trip>
-</div>
+<ul class="trips">
+  <li *ngFor="let trip of trips">
+    <app-trip [trip]="trip"></app-trip>
+  </li>
+</ul>
