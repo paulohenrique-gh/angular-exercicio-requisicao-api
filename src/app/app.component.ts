@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [RouterOutlet, TripComponent, CommonModule, FormsModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'Trips';
@@ -26,17 +26,24 @@ export class AppComponent {
 
   loadTrips(): void {
     this.tripsService.getAllTrips().subscribe(
-      response => {
+      (response) => {
         this.trips = response;
       },
-      error => {
-        console.error("Ocorreu um erro ao carregar as viagens: " + error);
+      (error) => {
+        console.error('Ocorreu um erro ao carregar as viagens: ' + error);
       }
-    )
+    );
   }
 
   searchTrip(): void {
     if (!this.id) return;
-    this.trips = this.trips.filter(trip => trip.id === Number(this.id));
+    this.tripsService.getTripById(Number(this.id)).subscribe(
+      (response) => {
+        this.trips = [response];
+      },
+      (error) => {
+        console.error('Ocorreu um erro ao carregar a viagem: ' + error);
+      }
+    );
   }
 }
