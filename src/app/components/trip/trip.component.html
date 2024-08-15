@@ -1,0 +1,9 @@
+<p>
+  <strong>{{ trip.title }}</strong>
+</p>
+<p>{{ trip.startDate }} | {{ trip.endDate }}</p>
+
+<img [src]="trip.imageUrl" [alt]="trip.title" width="300" />
+<figcaption>
+  {{ trip.destination.name }} - {{ trip.destination.country }}
+</figcaption>
