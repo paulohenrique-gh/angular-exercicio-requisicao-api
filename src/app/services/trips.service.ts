@@ -17,10 +17,6 @@ export class TripsService {
   }
 
   getTripById(id: number): Observable<any> {
-    return this.httpClient.get<Trip>(`${this.url}/id`)
-  }
-
-  deleteTrip(id: number): Observable<any> {
-    return this.httpClient.delete<any>(`${this.url}/id`);
+    return this.httpClient.get<any>(`${this.url}/${id}`)
   }
 }

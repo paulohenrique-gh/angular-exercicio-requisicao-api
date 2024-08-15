@@ -4,17 +4,19 @@ import { TripComponent } from './components/trip/trip.component';
 import { Trip } from './models/trip.model';
 import { TripsService } from './services/trips.service';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, TripComponent, CommonModule],
+  imports: [RouterOutlet, TripComponent, CommonModule, FormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'Trips';
   trips: Trip[] = [];
+  id = '';
 
   constructor(private tripsService: TripsService) {}
 
@@ -31,5 +33,10 @@ export class AppComponent {
         console.error("Ocorreu um erro ao carregar as viagens: " + error);
       }
     )
+  }
+
+  searchTrip(): void {
+    if (!this.id) return;
+    this.trips = this.trips.filter(trip => trip.id === Number(this.id));
   }
 }

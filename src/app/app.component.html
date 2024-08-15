@@ -1,5 +1,11 @@
 <h1>{{ title }}</h1>
 
+<div class="search">
+  <input type="text" placeholder="Trip id" [(ngModel)]="id">
+  <button (click)="searchTrip()">Search</button>
+</div>
+<button (click)="loadTrips()">Load all trips</button>
+
 <ul class="trips">
   <li *ngFor="let trip of trips">
     <app-trip [trip]="trip"></app-trip>

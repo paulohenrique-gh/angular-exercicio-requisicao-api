@@ -26,3 +26,9 @@ app-trip {
   justify-content: center;
   gap: 5px;
 }
+
+.search {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
